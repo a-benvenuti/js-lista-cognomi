@@ -14,8 +14,13 @@ arrayCognomiBool.sort();
 
 //  stampo il mio array sotto forma di lista a schermo
 for (var i = 0; i < arrayCognomiBool.length; i++) {
-  document.getElementById('lista_array').innerHTML += "<li>" + arrayCognomiBool[i] + "</li>";
+  if (arrayCognomiBool[i] === cognomeNew) {
+    document.getElementById('lista_array').innerHTML += "<li id='new_elem'>" + arrayCognomiBool[i] + "</li>";
+  } else {
+    document.getElementById('lista_array').innerHTML += "<li>" + arrayCognomiBool[i] + "</li>";
+  }
 }
+
 // indico la posizione del nuovo cognome all'interno dell'array ordinato alfabeticamente
 var posizione = (arrayCognomiBool.indexOf(cognomeNew)) + 1;
 console.log(posizione);
